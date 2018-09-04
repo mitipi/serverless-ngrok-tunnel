@@ -22,6 +22,6 @@
   "dependencies": {
     "envfile": "^2.3.0",
     "lodash": "^4.17.10",
-    "ngrok": "^3.0.1"
+    "ngrok": "2.3.0"
   }
 }
