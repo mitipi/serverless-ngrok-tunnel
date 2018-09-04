@@ -1,4 +1,8 @@
 # serverless-ngrok-tunnel
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+[![npm](https://img.shields.io/npm/v/serverless-ngrok-tunnel.svg)](https://www.npmjs.com/package/serverless-ngrok-tunnel)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+
 Serverless plugin that creates ngrok public tunnel on localhost.  
 Optionally, writes tunnels url to .env file and deletes them after session is over. Useful for when you want to expose url for other applications to use (for example mobile application).
 
