@@ -30,11 +30,11 @@ custom:
       - port: 8000 # required
         envProp: 'API_GATEWAY' # optional. property in .env file to assign url value to
 
-      # or if you are using `serverless-iot-offline` plugin, expose iot endpoint
+      # or if you are using `serverless-iot-offline` plugin, expose IoT endpoint
       - port: 1884
         envProp: 'IOT_ENDPOINT'
-        ws: true # optional. expose web-socket url
-        path: '/mqqt' # optional. additional pat to url
+        ws: true # expose web-socket url
+        path: '/mqqt' # additional path to url
         
       - port: 9000
         ngrokOptions: # optional. custom ngrok options
