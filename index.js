@@ -67,8 +67,7 @@ class ServerlessTunnel {
   }
 
   onTunnelClose () {
-    this.log('Tunnels closed unexpectedly. Trying to reconnect in 5 seconds...')
-    this.tryReconnect()
+    this.log('Closing tunnels...')
   }
 
   runServer (selfInit) {
@@ -87,6 +86,7 @@ class ServerlessTunnel {
     }
     if (this.slsOptions.tunnel === 'true' || selfInit) {
       if (this.options.tunnels && this.options.tunnels.length) {
+        this.log('Starting tunnels...')
         this.options.tunnels.forEach((opt) => this.runTunnel(opt))
         process.on('SIGINT', () => this.stopTunnel())
       } else {
@@ -96,7 +96,6 @@ class ServerlessTunnel {
   }
 
   stopTunnel () {
-    this.log('Disconnecting from tunnels...')
     ngrok.kill()
     if (!this.noEnvFile) {
       (this.options.tunnels || []).forEach(({envProp}) => {
