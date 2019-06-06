@@ -52,6 +52,6 @@ If you are using `serverless-offline` plugin, start offline with option flag: `s
 
 Yes, please. Checkout [contributing guidelines](./CONTRIBUTING.md).
 
-##Licence
+## Licence
 
 MIT
