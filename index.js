@@ -42,9 +42,6 @@ class ServerlessTunnel {
           this.onConnect(url, envProp, ws, path)
         }
       })
-
-      ngrok.on('disconnect', () => this.onTunnelClose())
-      ngrok.on('error', (e) => this.errorHandler(e))
     } catch (e) {
       this.errorHandler(e)
     }
