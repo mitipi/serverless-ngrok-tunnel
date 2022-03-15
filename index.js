@@ -28,20 +28,15 @@ class ServerlessTunnel {
     }
   }
 
-  runTunnel ({port, envProp, ws, path, ngrokOptions}) {
+  async runTunnel ({port, envProp, ws, path, ngrokOptions}) {
     try {
-      ngrok.connect({
+      const url = await ngrok.connect({
         addr: port,
         proto: 'http',
         region: 'eu',
         ...(ngrokOptions || {})
-      }, (err, url) => {
-        if (err) {
-          this.log(`Unable to create tunnel: ${err.message}`)
-        } else {
-          this.onConnect(url, envProp, ws, path)
-        }
       })
+      this.onConnect(url, envProp, ws, path)
     } catch (e) {
       this.errorHandler(e)
     }
