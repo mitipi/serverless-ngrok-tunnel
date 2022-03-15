@@ -39,7 +39,7 @@ custom:
       - port: 9000
         ngrokOptions: # optional. custom ngrok options
           authtoken: '12345'
-          region: 'us',
+          region: 'us'
           subdomain: 'my-subdomain'
           
 ```
