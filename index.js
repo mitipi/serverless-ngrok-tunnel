@@ -76,7 +76,7 @@ class ServerlessTunnel {
         this.noEnvFile = true
       }
     }
-    if (this.slsOptions.tunnel === 'true' || selfInit) {
+    if (this.slsOptions.tunnel === 'true' || this.slsOptions.param?.includes('tunnel=true') || selfInit) {
       if (this.options.tunnels && this.options.tunnels.length) {
         this.log('Starting tunnels...')
         this.options.tunnels.forEach((opt) => this.runTunnel(opt))
