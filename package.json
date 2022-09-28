@@ -21,7 +21,7 @@
   "homepage": "https://github.com/mitipi/serverless-ngrok-tunnel#readme",
   "dependencies": {
     "envfile": "^2.3.0",
-    "lodash": "^4.17.10",
-    "ngrok": "^4"
+    "lodash": "^4.17.21",
+    "ngrok": "^4.3.3"
   }
 }
