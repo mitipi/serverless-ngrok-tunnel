@@ -3,15 +3,15 @@
 [![npm](https://img.shields.io/npm/v/serverless-ngrok-tunnel.svg)](https://www.npmjs.com/package/serverless-ngrok-tunnel)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
 
-Serverless plugin that creates ngrok public tunnel on localhost.  
+Serverless plugin that creates ngrok public tunnel on localhost.
 Optionally, writes tunnels url to .env file and deletes them after session is over. Useful for when you want to expose url for other applications to use (for example mobile application).
 
 ## Installation
 
-Add serverless-ngrok-tunnel to your project:  
-`npm install --save-dev serverless-ngrok-tunnel`  
+Add serverless-ngrok-tunnel to your project:
+`npm install --save-dev serverless-ngrok-tunnel`
 
-Then inside your `serverless.yml` file add following entry to the plugins section:  
+Then inside your `serverless.yml` file add following entry to the plugins section:
 ```yaml
 plugins:
   - serverless-ngrok-tunnel
@@ -35,18 +35,20 @@ custom:
         envProp: 'IOT_ENDPOINT'
         ws: true # expose web-socket url
         path: '/mqqt' # additional path to url
-        
+
       - port: 9000
         ngrokOptions: # optional. custom ngrok options
           authtoken: '12345'
           region: 'us'
           subdomain: 'my-subdomain'
-          
-```
-For a list of available ngrok options checkout ngrok [documentation](https://github.com/bubenshchykov/ngrok#options).  
 
-To start tunnel/s run `sls tunnel`.  
-If you are using `serverless-offline` plugin, start offline with option flag: `sls offline start --tunnel=true`.
+```
+For a list of available ngrok options checkout ngrok [documentation](https://github.com/bubenshchykov/ngrok#options).
+
+To start tunnel/s run `sls tunnel`.
+If you are using `serverless-offline` plugin
+  - v2: start offline with option flag: `sls offline start --tunnel=true`.
+  - v3: start offline with option flag: `sls offline start --param="tunnel=true"`.
 
 ## Contributing
 
